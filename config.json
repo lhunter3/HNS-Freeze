@@ -1,0 +1,9 @@
+﻿{
+  "HELP": "Team 2 is Terrorist, Team 3 is CT, Time is in seconds, Radius in units",
+  "FreezeTeam": 3,
+  "FreezeTime": 4,
+  "FreezeRadius": 200,
+  "DisableFreeze": 0,
+  "NoFlashTeam": 2,
+  "DisableNoFlash": 0
+}
