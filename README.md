@@ -1,20 +1,24 @@
 # CS2 HNS Freeze
+
 HNS Freeze plugin written in C# for CounterStrikeSharp.
 
-## Progress
-- [x] CT Decoy Freeze (5 second witin 200 unit radius) (no circle vfx or sfx yet)
-- [x] T NoFlash 
-- [x] Config so plugin be used in Zombies aswell
-- [x] Decoy Freeze Effect
-- [ ] CT Attack Cooldown
+Works with HNS & Zombie Escape
 
+## Progress
+- [x] Decoy Freeze (Configurable time,radius and targetted team)
+- [X] Decoy Freeze Effect Similar to CSGO
+- [x] NoFlash (Configurable targetted team)
+- [x] Config 
+- [ ] Knife Attack Cooldown (HNS)
 
 
 ## Installation
 Download the zip file from the latest release, and extract the contents into your `counterstrikesharp/plugins` directory.
 
-config.json
-Plugin must be reloaded for changes to take effect. Default is configured for HNS, but values can be modified for Zombies.
+#### config.json
+Plugin must be reloaded for config changes to take effect.
+
+#### CONFIG FOR HNS
 ```
 {
   "HELP": "Team 2 is Terrorist, Team 3 is CT, Time is in seconds, Radius in units",
@@ -23,6 +27,19 @@ Plugin must be reloaded for changes to take effect. Default is configured for HN
   "FreezeRadius": 200,
   "DisableFreeze": 0,
   "NoFlashTeam": 2,
+  "DisableNoFlash": 0
+}
+```
+
+#### CONFIG FOR ZOMBIES
+```
+{
+  "HELP": "Team 2 is Terrorist, Team 3 is CT, Time is in seconds, Radius in units",
+  "FreezeTeam": 2,
+  "FreezeTime": 4,
+  "FreezeRadius": 200,
+  "DisableFreeze": 0,
+  "NoFlashTeam": 3,
   "DisableNoFlash": 0
 }
 ```
