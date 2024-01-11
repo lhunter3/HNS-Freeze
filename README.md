@@ -5,8 +5,7 @@ HNS Freeze plugin written in C# for CounterStrikeSharp.
 - [x] CT Decoy Freeze (5 second witin 200 unit radius) (no circle animation vfx yet or sfx)
 - [x] T NoFlash 
 - [ ] CT Attack Cooldown
-- [ ] 
-- [ ]
+
 
 
 
