@@ -6,10 +6,11 @@ Works with HNS & Zombie Escape
 
 ## Progress
 - [x] Decoy Freeze (Configurable time,radius and targetted team)
-- [X] Decoy Freeze Effect Similar to CSGO
+- [X] Decoy Freeze Radius Effect Similar to CSGO
 - [x] NoFlash (Configurable targetted team)
 - [x] Config 
 - [ ] Knife Attack Cooldown (HNS)
+- [ ] Decoy Freeze Player Tint Effect (ie blue player when frozen)
 
 
 ## Installation
