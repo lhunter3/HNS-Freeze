@@ -24,7 +24,7 @@ public class HNSFreeze : BasePlugin
     public override string ModuleDescription => "Decoy Freeze-CT & NoFlash-T for HNS Gamemode .";
     
     public static readonly string LogPrefix = $"[HNS Freeze {Version}] ";
-    public static readonly string MessagePrefix = $"[{ChatColors.Blue}HNS Freeze{ChatColors.White}] ";
+    public static readonly string MessagePrefix = $"[{ChatColors.Blue}Freeze{ChatColors.White}] ";
 
 
     //freeze time in ticks
