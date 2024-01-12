@@ -2,15 +2,21 @@
 
 HNS Freeze plugin written in C# for CounterStrikeSharp.
 
-Works with HNS & Zombie Escape
+Intended for HNS but can be configured for Zombie Escape gamemode.
+
+## Features
+- Freeze Grenade (Decoy)
+- No Flash
+
 
 ## Progress
 - [x] Decoy Freeze (Configurable time,radius and targetted team)
-- [X] Decoy Freeze Radius Effect Similar to CSGO
+- [X] Freeze Area Effect Similar to CSGO
 - [x] NoFlash (Configurable targetted team)
 - [x] Config 
 - [ ] Knife Attack Cooldown (HNS)
 - [ ] Decoy Freeze Player Tint Effect (ie blue player when frozen)
+- [ ] NoSmoke (Configurable targetted team)
 
 
 ## Installation
