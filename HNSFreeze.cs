@@ -116,7 +116,7 @@ public class HNSFreeze : BasePlugin
             DrawLaserBetween(decoyBeamInnerPoints, decoyBeamOutlinePoints,Config.FreezeTime);
 
 
-            var players = Utilities.GetPlayers().Where(x => x is { IsBot: true, Connected: PlayerConnectedState.PlayerConnected });
+            var players = Utilities.GetPlayers().Where(x => x is { Connected: PlayerConnectedState.PlayerConnected });
 
             foreach (var player in players)
             {
