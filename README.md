@@ -7,16 +7,18 @@ Intended for HNS but can be configured for Zombie Escape gamemode.
 ## Features
 - Freeze Grenade (Decoy)
 - No Flash
+- No Smoke
 
 
 ## Progress
 - [x] Decoy Freeze (Configurable time,radius and targetted team)
 - [X] Freeze Area Effect Similar to CSGO
-- [x] NoFlash (Configurable targetted team)
+- [x] No Flash (Configurable targetted team)
+- [x] No Smoke
 - [x] Config 
 - [ ] Knife Attack Cooldown (HNS)
 - [ ] Decoy Freeze Player Tint Effect (ie blue player when frozen)
-- [ ] NoSmoke (Configurable targetted team)
+
 
 
 ## Installation
@@ -34,7 +36,8 @@ Plugin must be reloaded for config changes to take effect.
   "FreezeRadius": 200,
   "DisableFreeze": 0,
   "NoFlashTeam": 2,
-  "DisableNoFlash": 0
+  "DisableNoFlash": 0,
+  "DisableSmoke":  0
 }
 ```
 
@@ -47,7 +50,8 @@ Plugin must be reloaded for config changes to take effect.
   "FreezeRadius": 200,
   "DisableFreeze": 0,
   "NoFlashTeam": 3,
-  "DisableNoFlash": 0
+  "DisableNoFlash": 0,
+  "DisableSmoke":  0
 }
 ```
 
