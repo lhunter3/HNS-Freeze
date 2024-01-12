@@ -100,6 +100,9 @@ public class HNSFreeze : BasePlugin
             SphereEntity sphereEntity = new SphereEntity(new Vector(@event.X, @event.Y, @event.Z), Config.FreezeRadius);
             DrawLaserBetween(sphereEntity.circleInnerPoints, sphereEntity.circleOutterPoints, Config.FreezeTime);
 
+            var decoy = Utilities.GetEntityFromIndex<CEntityInstance>(@event.Entityid);
+            decoy.Remove();
+
             var players = Utilities.GetPlayers().Where(x => x is { Connected: PlayerConnectedState.PlayerConnected });
 
             foreach (var player in players)
