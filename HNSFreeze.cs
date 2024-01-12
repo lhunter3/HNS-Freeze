@@ -2,11 +2,10 @@
 using CounterStrikeSharp.API.Core;
 using CounterStrikeSharp.API.Core.Attributes;
 using CounterStrikeSharp.API.Core.Attributes.Registration;
-using CounterStrikeSharp.API.Modules.Timers;
+using CounterStrikeSharp.API.Modules.Entities;
 using CounterStrikeSharp.API.Modules.Utils;
 using HNSFreeze;
 using Microsoft.Extensions.Logging;
-using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 using System.Text.Json;
@@ -86,8 +85,7 @@ public class HNSFreeze : BasePlugin
                 }
             }
         }));
-
-        
+       
     }
 
 
@@ -140,9 +138,31 @@ public class HNSFreeze : BasePlugin
     }
 
 
+    [GameEventHandler]
+    public HookResult OnSmokeStarted(EventSmokegrenadeDetonate @event, GameEventInfo info)
+    {
+       // could look for a way to remove smoke for team but its not rly needed for hns so :/
+        
+       if(Config is not null)
+       {
+            if(Config.DisableSmoke == 1) 
+            {
+                var smoke = Utilities.GetEntityFromIndex<CEntityInstance>(@event.Entityid);
+                smoke.Remove();
+            }
+       }
+        return HookResult.Continue;
+    }
 
+    public void OnPlayerAttacked(CCSPlayerController player)
+    {
 
+    }
+    
 
+    
+
+   
 
     private void DrawLaserBetween(Vector[] startPos, Vector[] endPos, float duration)
     {
@@ -173,27 +193,6 @@ public class HNSFreeze : BasePlugin
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    
 }
 

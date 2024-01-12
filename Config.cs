@@ -33,6 +33,9 @@ namespace HNSFreeze
         [JsonPropertyName("DisableNoFlash")]
         public int DisableNoFlash { get; set; } = 0;
 
+        [JsonPropertyName("DisableSmoke")]
+        public int DisableSmoke{ get; set; } = 0;
+
         public int Version { get; set; } = 1;
     }
 }
