@@ -27,10 +27,6 @@ public class HNSFreeze : BasePlugin
     public static readonly string MessagePrefix = $"[{ChatColors.Blue}Freeze{ChatColors.White}] ";
 
 
-    //freeze time in ticks
-
-
-    
     private Dictionary<CCSPlayerController, int> playersFrozen = new Dictionary<CCSPlayerController, int>();
     public Config? Config { get; set; }
 
@@ -104,6 +100,13 @@ public class HNSFreeze : BasePlugin
 
         if(Config is not null)
         {
+            /*
+             * Instead of checking distance for each player, create sphere ent at decoy pos with a radius of x  and only get players within
+             */
+            //var sphere = Utilities.CreateEntityByName<CSoundAreaEntitySphere>("entitySphere");
+            
+         
+
 
             var decoyPosition = new Vector3(@event.X, @event.Y, @event.Z);
 
@@ -113,7 +116,7 @@ public class HNSFreeze : BasePlugin
             DrawLaserBetween(decoyBeamInnerPoints, decoyBeamOutlinePoints,Config.FreezeTime);
 
 
-            var players = Utilities.GetPlayers().Where(x => x is { IsBot: false, Connected: PlayerConnectedState.PlayerConnected });
+            var players = Utilities.GetPlayers().Where(x => x is { IsBot: true, Connected: PlayerConnectedState.PlayerConnected });
 
             foreach (var player in players)
             {
