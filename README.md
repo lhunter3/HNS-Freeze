@@ -10,6 +10,10 @@ It's designed for HNS gameplay but can be easily set up for Zombie Escape mode.
 - No Smoke
 
 
+## Preview 
+<img src='https://github.com/lhunter3/HNS-Freeze/assets/80433013/a33ad647-71a9-41ca-a831-e6a8779258a0' width='400'>
+
+
 ## Progress
 - [x] Decoy Freeze (Configurable time,radius and targetted team)
 - [X] Freeze Area Effect Similar to CSGO
