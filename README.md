@@ -1,8 +1,8 @@
 # CS2 HNS Freeze
 
-HNS Freeze plugin written in C# for CounterStrikeSharp.
+HNS Freeze is a C# plugin for CounterStrikeSharp that brings back the classic Grenade Freeze for Hide and Seek (HNS) in CS2.
 
-Intended for HNS but can be configured for Zombie Escape gamemode.
+It's designed for HNS gameplay but can be easily set up for Zombie Escape mode.
 
 ## Features
 - Freeze Grenade (Decoy)
