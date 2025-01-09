@@ -21,7 +21,7 @@ public class HNSFreeze : BasePlugin
     public override string ModuleVersion => Version;
     public override string ModuleAuthor => "lhunter3";
     public override string ModuleDescription => "Decoy Freeze-CT & NoFlash-T for HNS Gamemode .";
-    
+
     public static readonly string LogPrefix = $"[HNS Freeze {Version}] ";
     public static readonly string MessagePrefix = $"[{ChatColors.Blue}Freeze{ChatColors.White}] ";
 
@@ -57,11 +57,14 @@ public class HNSFreeze : BasePlugin
                     {
 
                         //freeze stop movement
-                        info.Key.PlayerPawn.Value.VelocityModifier = -999999;
+                        var velocity = info.Key.PlayerPawn.Value.Velocity;
+                        velocity.X = -999999;
+                        velocity.Y = -999999;
+                        velocity.Z = -999999;
                         info.Key.PlayerPawn.Value.Friction = 999999;
                         info.Key.PlayerPawn.Value.MoveType = MoveType_t.MOVETYPE_CUSTOM;
                         info.Key.PlayerPawn.Value.MoveDoneTime = Server.CurrentTime;
-                       
+
                         //stop damage
                         info.Key.PlayerPawn.Value.TakesDamage = false;
 
@@ -78,14 +81,17 @@ public class HNSFreeze : BasePlugin
                         //reset vals
                         info.Key.PlayerPawn.Value.MoveType = MoveType_t.MOVETYPE_WALK;
                         info.Key.PlayerPawn.Value.Friction = 1;
-                        info.Key.PlayerPawn.Value.VelocityModifier = 1;
+                        var velocity = info.Key.PlayerPawn.Value.Velocity;
+                        velocity.X = 1;
+                        velocity.Y = 1;
+                        velocity.Z = 1;
                         info.Key.PlayerPawn.Value.TakesDamage = true;
 
                     }
                 }
             }
         }));
-       
+
     }
 
 
@@ -113,7 +119,7 @@ public class HNSFreeze : BasePlugin
                     playersFrozen[player] = (Server.TickCount + Config.FreezeTime*64);
                     Server.PrintToChatAll($" {MessagePrefix} {ChatColors.Green} {player.PlayerName} {ChatColors.White} is frozen for {ChatColors.Red} {Config.FreezeTime} seconds");
                     Logger.LogInformation($" [DECOY] {player.PlayerName} is frozen for {Config.FreezeTime} seconds");
-                    
+
                 }
             }
         }
@@ -126,7 +132,7 @@ public class HNSFreeze : BasePlugin
     public HookResult OnPlayerFlash(EventPlayerBlind @event, GameEventInfo info)
     {
         var player = @event.Userid;
-        
+
 
         if (player.PlayerPawn.Value != null && player.IsValid)
         {
@@ -145,10 +151,10 @@ public class HNSFreeze : BasePlugin
     public HookResult OnSmokeStarted(EventSmokegrenadeDetonate @event, GameEventInfo info)
     {
        // could look for a way to remove smoke for team but its not rly needed for hns so :/
-        
+
        if(Config is not null)
        {
-            if(Config.DisableSmoke == 1) 
+            if(Config.DisableSmoke == 1)
             {
                 var smoke = Utilities.GetEntityFromIndex<CEntityInstance>(@event.Entityid);
                 smoke.Remove();
@@ -161,11 +167,11 @@ public class HNSFreeze : BasePlugin
     {
 
     }
-    
 
-    
 
-   
+
+
+
 
     private void DrawLaserBetween(Vector[] startPos, Vector[] endPos, float duration)
     {
@@ -191,11 +197,11 @@ public class HNSFreeze : BasePlugin
             AddTimer(duration, () => { beam.Remove(); });
 
         }
-        
-        
+
+
     }
 
 
-    
+
 }
 
